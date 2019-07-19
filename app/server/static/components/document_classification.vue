@@ -80,6 +80,7 @@ export default {
         };
         await HTTP.post(`docs/${docId}/annotations`, payload).then((response) => {
           this.annotations[this.pageNumber].push(response.data);
+          this.nextPage();
         });
       }
     },
